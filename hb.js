@@ -1,20 +1,23 @@
-var hookio = require('hook.io')
+var hookio = require('hook.io');
 
-var i = 0
+var i = 0;
 
 setInterval(function() {
-  i++
-})
+  i++;
+});
 
-var hookB = hookio.createHook({
+var hookSlave = hookio.createHook({
   name: "b",
-  silent: true,
+  debug: true,
+  //silent: true,
   m: true
-})
+});
 
-hookB.on('master::get', function(){
-  hookB.emit('ans', i)
-  i=0
-})
+hookSlave.on('hook::ready', function () {
+	hookSlave.on('master::get', function(){
+	  hookSlave.emit('ans', i);
+	  i=0;
+	});
+});
 
-hookB.start()
+hookSlave.start()
