@@ -9,7 +9,7 @@ setInterval(function() {
 
 var hookMaster = hookio.createHook({
   name: "master",
-  //silent: true,
+  silent: true,
   m: true
 });
 

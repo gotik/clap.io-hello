@@ -8,7 +8,7 @@ setInterval(function() {
 
 var hookSlave = hookio.createHook({
   name: "b",
-  //silent: true,
+  silent: true,
   m: true
 });
 
