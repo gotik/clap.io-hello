@@ -7,7 +7,7 @@ setInterval(function() {
 }, 1)
 
 var hookB = hookio.createHook({
-  name: "b"
+  name: "b",
   m: true
 })
 
