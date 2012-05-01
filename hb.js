@@ -12,7 +12,7 @@ var hookB = hookio.createHook({
   m: true
 })
 
-hookB.on('master->get', function(){
+hookB.on('master::get', function(){
   hookB.emit('ans', i)
   i=0
 })

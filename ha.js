@@ -13,7 +13,7 @@ var hookMaster = hookio.createHook({
   m: true
 })
 
-hookMaster.on('*->ans', function(data){
+hookMaster.on('*::ans', function(data){
   i += data
 })
 
@@ -25,5 +25,5 @@ http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'})
   res.write('time: '+time+' seg\n')
   res.end(i+'\n')
-}).listen(3001)
+}).listen(3003)
 
