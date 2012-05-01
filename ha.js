@@ -13,7 +13,7 @@ var hookMaster = hookio.createHook({
   m: true
 })
 
-hookMaster.on('*::ans', function(data){
+hookMaster.on('*->ans', function(data){
   i += data
 })
 
