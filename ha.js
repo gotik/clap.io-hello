@@ -5,16 +5,19 @@ var startTime = new Date()
 
 setInterval(function() {
   i++
-})
+}, 1)
 
 var hookMaster = hookio.createHook({
   name: "master",
-	silent: true
+  hookPort: "5000",
+  m: true
 })
+
 hookMaster.on('*::ans', function(data){
   // outputs b::sup::dog
   i += data
 })
+
 hookMaster.start()
 
 http.createServer(function (req, res) {
