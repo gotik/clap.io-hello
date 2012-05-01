@@ -9,12 +9,11 @@ setInterval(function() {
 
 var hookMaster = hookio.createHook({
   name: "master",
-  hookPort: "5000",
+  silent: true,
   m: true
 })
 
 hookMaster.on('*::ans', function(data){
-  // outputs b::sup::dog
   i += data
 })
 
@@ -26,5 +25,5 @@ http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'})
   res.write('time: '+time+' seg\n')
   res.end(i+'\n')
-}).listen(4444)
+}).listen(3001)
 
