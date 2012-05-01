@@ -9,8 +9,7 @@ setInterval(function() {
 
 var hookMaster = hookio.createHook({
   name: "master",
-  debug: true,
-  //silent: true,
+  silent: true,
   m: true
 });
 
@@ -27,6 +26,6 @@ hookMaster.on('hook::ready', function () {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.write('time: '+time+' seg\n');
     res.end(i+'\n');
-  }).listen(3003);
+  }).listen(3333);
 });
 
