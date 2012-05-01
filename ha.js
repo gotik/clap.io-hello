@@ -9,23 +9,23 @@ setInterval(function() {
 
 var hookMaster = hookio.createHook({
   name: "master",
-  silent: true,
+  //silent: true,
   m: true
 });
 
-hookMaster.on('*::ans', function(data){
+hookMaster.on('*:::ans', function(data){
   i += data;
 });
 
 hookMaster.start();
 
-hookMaster.on('hook::ready', function () {
+hookMaster.on('hook:::ready', function () {
   http.createServer(function (req, res) {
     hookMaster.emit('get');
     var time = (new Date() - startTime)/1000;
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.write('time: '+time+' seg\n');
     res.end(i+'\n');
-  }).listen(3333);
+  }).listen(4444);
 });
 
