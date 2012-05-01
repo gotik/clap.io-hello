@@ -5,7 +5,7 @@ var startTime = new Date()
 
 setInterval(function() {
   i++
-}, 1)
+})
 
 var hookMaster = hookio.createHook({
   name: "master",
