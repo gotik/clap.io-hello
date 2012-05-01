@@ -26,6 +26,6 @@ hookMaster.on('hook:::ready', function () {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.write('time: '+time+' seg\n');
     res.end(i+'\n');
-  }).listen(4444);
+  }).listen(5555);
 });
 
