@@ -19,7 +19,7 @@ hookMaster.on('*:::ans', function(data){
 
 hookMaster.start();
 
-hookMaster.on('hook:::ready', function () {
+//hookMaster.on('hook:::ready', function () {
   http.createServer(function (req, res) {
     hookMaster.emit('get');
     var time = (new Date() - startTime)/1000;
@@ -27,5 +27,5 @@ hookMaster.on('hook:::ready', function () {
     res.write('time: '+time+' seg\n');
     res.end(i+'\n');
   }).listen(5000);
-});
+//});
 
