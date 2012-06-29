@@ -9,6 +9,7 @@ setInterval(function() {
 var hookSlave = hookio.createHook({
   name: "b",
   silent: true,
+  "hook-port" : 9999,  
   m: true
 });
 
